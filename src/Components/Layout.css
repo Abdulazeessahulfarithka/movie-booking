@@ -1,0 +1,83 @@
+
+.navbar {
+  padding: 0.5em 1rem;
+  background-color: #fff; /* consistent with footer */
+  box-shadow: 0px 4px 5px rgba(0,0,0,0.05); /* subtle shadow */
+}
+.shadow-nav {
+  width: 100%; /* match window width */
+  box-shadow: 0px 4px 5px rgba(0, 0, 0, 0.05); /* subtle shadow */
+  position: fixed; /* stick it at the top */
+  top: 0;
+  left: 0;
+  z-index: 1030; /* above content but below modals */
+}
+
+
+.navbar-brand {
+  font-size: 1.25rem;
+  font-weight: bold;
+}
+
+.navbar .form-control {
+  width: 250px;
+  transition: width 0.3s ease-in-out;
+}
+
+.navbar .form-control:focus {
+  width: 300pxx;
+  box-shadow: 0 0 5px rgba(0, 123, 255, 0.5);
+  border-color: #007bff;
+}
+
+.btn-outline-primary {
+  white-space: nowrap;
+}
+
+.sticky-top {
+  position: sticky;
+  top: 0;
+  z-index: 1030;
+}
+
+@media (max-width: 768px) {
+  .navbar .form-control {
+    width: 100%;
+    margin-bottom: 0.5rem;
+  }
+}
+
+/* ===== Footer Styles ===== */
+footer {
+  font-size: 1rem;
+  height:100;
+  color: #6c757d;
+  background-color: #f8f9fa;
+  border-top: 75px solid #eaeaea;
+}
+
+footer a {
+  text-decoration: none;
+  color: #007bff;
+}
+
+footer a:hover {
+  text-decoration: underline;
+  color: #0056b3;
+}
+
+/* ===== Layout Structure ===== */
+html, body {
+  height: 100%;
+  margin: 0;
+}
+
+#root {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+main {
+  flex: 1;
+}
