@@ -1,0 +1,24 @@
+.col-lg-12 {
+    background-color: rgba(185, 178, 178, 0.2);
+    margin-top: 10px;
+    text-align: center;
+    padding: 15px;
+}
+
+.nerko-one-regular {
+    font-family: "Nerko One", cursive;
+    font-weight: 400;
+    font-style: normal;
+    font-size: 28px; /* big font */
+}
+
+.col-lg-12 a {
+    margin: 0 15px;
+    color: black;
+    text-decoration: none;
+}
+
+.col-lg-12 a:hover {
+    text-decoration: underline;
+    color: #333;
+}

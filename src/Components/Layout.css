@@ -4,15 +4,6 @@
   background-color: #fff; /* consistent with footer */
   box-shadow: 0px 4px 5px rgba(0,0,0,0.05); /* subtle shadow */
 }
-.shadow-nav {
-  width: 100%; /* match window width */
-  box-shadow: 0px 4px 5px rgba(0, 0, 0, 0.05); /* subtle shadow */
-  position: fixed; /* stick it at the top */
-  top: 0;
-  left: 0;
-  z-index: 1030; /* above content but below modals */
-}
-
 
 .navbar-brand {
   font-size: 1.25rem;
@@ -80,4 +71,8 @@ html, body {
 
 main {
   flex: 1;
+}
+
+.layout-main {
+  min-height: 250vh; /* Better than inline styles */
 }

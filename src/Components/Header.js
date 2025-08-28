@@ -13,7 +13,6 @@
 
       })
     }
-
     // Detect user location using Geolocation API
     const detectLocation = () => {
       if (navigator.geolocation) {
@@ -34,8 +33,8 @@
     };
 
     return (
-      <div className="container">
-        <nav className="navbar navbar-expand-lg navbar-light bg-light shadow-nav">
+      
+        <nav className="navbar navbar-expand-lg navbar-light bg-light ">
           
           {/* Logo */}
           <Link className="navbar-brand" to={"/"}>🎟 Book Tickets</Link>
@@ -73,7 +72,6 @@
           </div>
           <NavLink className="btn btn-primary" to={"/login"}>Login</NavLink>
         </nav>
-      </div>
     );
   }
 

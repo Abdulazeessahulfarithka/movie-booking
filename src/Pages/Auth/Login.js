@@ -23,6 +23,9 @@ function Login() {
       if (!values.password) {
         errors.password = "Please enter your password";
       }
+      if(!values){
+        errors.general = "Please fill all the fields"
+      }
       return errors;
     },
     onSubmit: async (values) => {
@@ -31,7 +34,7 @@ function Login() {
         if (login && login.data.success) {
           toast.success(login.data.message);
           localStorage.setItem("auth", JSON.stringify(login.data));
-          navigate(location.state || "/");
+          navigate(location.state || "/viewmovie");
         } else {
           toast.error(login.data.message);
         }
