@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import { useParams } from 'react-router-dom';
+import { Link, useParams } from 'react-router-dom';
 import API from "../Global.js";
 import axios from 'axios';
 import "./viewmovie.css"; // We'll create this
@@ -38,6 +38,9 @@ function ViewMovie() {
         <h2>{movie.moviename}</h2>
         <p><strong>About:</strong> {movie.aboutmovie}</p>
         <p><strong>Cast:</strong> {movie.cast}</p>
+         <p><strong>Crew:</strong> {movie.crew}</p>
+          <p><strong>Ratingd:</strong> {movie.ratings}</p>
+
       </div>
     </div>
   );

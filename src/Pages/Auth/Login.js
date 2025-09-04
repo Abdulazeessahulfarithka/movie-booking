@@ -1,14 +1,16 @@
-import React from "react";
+import React, { useState } from "react";
 import { useFormik } from "formik";
 import { Link, useNavigate, useLocation } from "react-router-dom";
 import API from "../../Global.js";
 import axios from "axios";
-import toast from "react-hot-toast";
+import { ToastContainer, toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 import "./Auth.css";
+import { useAuth } from "../../Context/auth.js";
 
 function Login() {
   const navigate = useNavigate();
-  const location = useLocation();
+const[auth,setAuth]= useAuth()
 
   const formik = useFormik({
     initialValues: {
@@ -23,30 +25,39 @@ function Login() {
       if (!values.password) {
         errors.password = "Please enter your password";
       }
-      if(!values){
-        errors.general = "Please fill all the fields"
-      }
       return errors;
     },
     onSubmit: async (values) => {
       try {
         const login = await axios.post(`${API}/api/user/login`, values);
         if (login && login.data.success) {
-          toast.success(login.data.message);
-          localStorage.setItem("auth", JSON.stringify(login.data));
-          navigate(location.state || "/viewmovie");
+          toast.success("Login successful!");
+          setAuth({
+            ...auth,
+            user: login.data.user,
+            token: login.data.token,
+          });
+     localStorage.setItem("auth", JSON.stringify(login.data));
+          navigate("/"); 
+         
         } else {
-          toast.error(login.data.message);
+          toast.error(login.data.message || "Login failed");
         }
       } catch (error) {
-        console.error(error);
-        toast.error("Something went wrong. Please try again.");
+        if (error.response && error.response.status === 404) {
+          toast.warn("Please register first");
+        } else if (error.response?.data?.message) {
+          toast.error(error.response.data.message);
+        } else {
+          toast.error("Something went wrong. Please try again.");
+        }
       }
     },
   });
 
   return (
     <div className="auth-container">
+      <ToastContainer position="top-center" autoClose={3000} />
       <ul className="nav nav-pills nav-justified mb-3" id="ex1" role="tablist">
         <li className="nav-item" role="presentation">
           <a className="nav-link active" id="tab-login" href="#pills-login" role="tab">

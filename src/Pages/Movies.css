@@ -1,4 +1,4 @@
-.card-container {
+.movie-container {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
   gap: 20px;
@@ -6,10 +6,7 @@
   justify-items: center;
 }
 
-.card {
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between; /* Ensures button stays at bottom */
+.movie {
   background: #ffffff;
   border-radius: 12px;
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
@@ -17,6 +14,7 @@
   overflow: hidden;
   width: 100%;
   max-width: 220px;
+  text-align: center;
 }
 
 .card:hover {
@@ -24,17 +22,13 @@
   box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
 }
 
-.card-img-top {
+.movie-img-top {
   width: 100%;
   height: 320px;
   object-fit: cover;
 }
 
 .card-body {
-  flex-grow: 1; /* Makes title/description area flexible */
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
   padding: 15px;
 }
 
@@ -46,7 +40,6 @@
 }
 
 .card .btn {
-  margin-top: auto; /* Pushes button to the bottom */
   display: inline-block;
   padding: 8px 14px;
   border-radius: 6px;
@@ -55,7 +48,6 @@
   background: #6c757d;
   color: #fff;
   text-decoration: none;
-  text-align: center;
   transition: background 0.3s ease;
 }
 

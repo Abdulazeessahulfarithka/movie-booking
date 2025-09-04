@@ -21,4 +21,36 @@
     width: 100%;
     gap: 20px; 
 }
+.search-bar {
+  display: flex; /* Or inline-flex */
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  max-width: 400px; /* Optional */
+  padding: 8px 12px;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  background: white;
+}
 
+/* Mobile-friendly */
+@media (max-width: 600px) {
+  .search-bar {
+    width: 100%; /* Full width on mobile */
+    max-width: none;
+    margin: 0 auto;
+    display: flex !important; /* Force show */
+  }
+  .content-box {
+    padding: 20px 30px;
+  }
+
+  .content-box h1 {
+    font-size: 1.5rem;
+  }
+
+  .btn {
+    font-size: 0.9rem;
+    padding: 8px 16px;
+  }
+}
